@@ -1,6 +1,7 @@
+
 .PHONY:clean all
 #SRC=$(wildcard *.c)
-SRC=ascii.c change.c equation.c gray.c inverse.c pi.c plank.c time.c weekday.c
+SRC=split.c interpreter.c substr.c tokenizer.c title.c stringcat.c
 EXF=$(SRC:%.c=%)
 FLAG= gcc  -Wall
 #
@@ -10,8 +11,4 @@ $(EXF):%:%.c
 	   $(FLAG) $^ -o $@
 	
 test:build
-	for i in $(EXF); do\
-	  bash test.sh $$i; \
-	done;\
-
-
+	for i in $(EXF); do	  bash test.sh $$i; 	done;
